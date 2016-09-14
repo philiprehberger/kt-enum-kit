@@ -1,6 +1,6 @@
 # enum-kit
 
-[![CI](https://github.com/philiprehberger/kt-enum-kit/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-enum-kit/actions/workflows/publish.yml)
+[![Tests](https://github.com/philiprehberger/kt-enum-kit/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-enum-kit/actions/workflows/publish.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/enum-kit)](https://central.sonatype.com/artifact/com.philiprehberger/enum-kit)
 [![License](https://img.shields.io/github/license/philiprehberger/kt-enum-kit)](LICENSE)
 
@@ -11,9 +11,7 @@ Enhanced enum utilities: safe parsing, display names, and value mapping.
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-dependencies {
-    implementation("com.philiprehberger:enum-kit:0.1.2")
-}
+implementation("com.philiprehberger:enum-kit:0.1.3")
 ```
 
 ### Maven
@@ -22,7 +20,7 @@ dependencies {
 <dependency>
     <groupId>com.philiprehberger</groupId>
     <artifactId>enum-kit</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
 </dependency>
 ```
 
