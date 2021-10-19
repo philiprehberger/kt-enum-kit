@@ -29,3 +29,10 @@ public inline fun <reified T : Enum<T>> T.previous(): T {
     val values = enumValues<T>()
     return values[(this.ordinal - 1 + values.size) % values.size]
 }
+
+/** Returns `true` if [name] matches any constant of enum [T]. */
+public inline fun <reified T : Enum<T>> enumContains(name: String, ignoreCase: Boolean = false): Boolean {
+    return enumValues<T>().any {
+        if (ignoreCase) it.name.equals(name, ignoreCase = true) else it.name == name
+    }
+}
