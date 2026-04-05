@@ -11,7 +11,7 @@ Enhanced enum utilities: safe parsing, display names, and value mapping.
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-implementation("com.philiprehberger:enum-kit:0.1.3")
+implementation("com.philiprehberger:enum-kit:0.2.0")
 ```
 
 ### Maven
@@ -20,7 +20,7 @@ implementation("com.philiprehberger:enum-kit:0.1.3")
 <dependency>
     <groupId>com.philiprehberger</groupId>
     <artifactId>enum-kit</artifactId>
-    <version>0.1.3</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -58,6 +58,14 @@ enum class Priority(override val value: Int) : ValueEnum<Int> {
 fromValue<Priority, Int>(2) // Priority.HIGH
 ```
 
+### Membership Checking
+
+```kotlin
+enumContains<Color>("RED")                    // true
+enumContains<Color>("YELLOW")                 // false
+enumContains<Color>("red", ignoreCase = true) // true
+```
+
 ### Navigation
 
 ```kotlin
@@ -71,6 +79,7 @@ enumNames<Color>()    // ["RED", "GREEN", "BLUE"]
 | Function / Class | Description |
 |------------------|-------------|
 | `valueOfOrNull<T>(name, ignoreCase)` | Safe enum parsing, returns `null` instead of throwing |
+| `enumContains<T>(name, ignoreCase)` | Check if a name matches any enum constant |
 | `enumNames<T>()` | List all enum constant names |
 | `enumRandom<T>()` | Random enum constant |
 | `T.next()` / `T.previous()` | Navigate enum constants (wraps around) |
